@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+
+<p><small>If you have an account, </small> <b><a href="/login">login</a></b></p>
+
+<h1 class="form-inf">Welcome, please sign up:</h1>
+
+
+<form method="POST">
+{% include "form.html"%}
+<button type="submit">Register</button>
+</form>
+
+{% endblock %}

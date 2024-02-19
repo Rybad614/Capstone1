@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuneseek: {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href=" {{ url_for('static',filename='css/base.css') }} ">
+    <link rel="stylesheet" type="text/css" href=" {{ url_for('static',filename='css/index.css') }} ">
+    <link rel="stylesheet" type="text/css" href=" {{ url_for('static',filename='css/profile.css') }} ">
+    <script src=" {{ url_for('static',filename='js/script.js') }} "></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="header">
+        <h1 id="base-logo">TuneSeek</h1>
+        <ul>
+          <li>
+            <a class="nav-link" id="contact" href="/contact" target="_blank">Contact me</a>
+          </li>
+          {% if session['username'] %}
+          <li>
+            <a class="nav-link" href="/logout">Logout</a>
+          </li>
+          {% else %}
+          <li>
+            <a class="nav-link" href="/register">Sign up</a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </nav>
+  </header>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

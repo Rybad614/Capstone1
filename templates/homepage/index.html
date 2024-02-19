@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<div id="home-container">
+    <div id="content-wrap">
+        <h1 class="form-inf">Search song:</h1>
+
+        <form action="/result" method="POST">
+            {{ form.lyrics(class="search-bar", placeholder="Search lyrics") }}
+            <br>
+            {{ form.genre(class="select-handle") }}
+            {{ form.year(class="select-handle") }}
+            <br>
+            <button type="submit">FIND</button>
+        </form>
+
+    </div>
+    <footer id="footer">
+        <div class="box">
+            <a href="#home-share">Share With Friends</a>
+        </div>
+        <div id="home-share" class="popup">
+            <div class="content">
+                <h1>Thank you for the share !</h1>
+                <a href="" class="box-close">x</a>
+            </div>
+        </div>
+        <div class="box">
+            <a href="#home-instructions">How Search Works</a>
+        </div>
+        <div id="home-instructions" class="popup">
+            <div class="content">
+                <h1>This is how to search...</h1>
+                <div class="content-overflow">
+                    <p>
+                        This app is designed to make searches
+                        more efficient when it comes to looking
+                        for music
+                    </p>
+                    <p>
+                        With features like Selecting the <b>genre</b>
+                        or <b>year range</b>, you're more likely to find
+                        exactly what you're searching for.
+                    </p>
+                    <p>For more info, please <b><a href="https://github.com/Rybad614/Capstone1/blob/main/README.md" target="_blank">vist here!</a></b></p>
+                    <a href="" class="box-close">x</a>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <a href="#home-settings">Settings</a>
+        </div>
+        <div id="home-settings" class="popup">
+            <div class="content">
+                <h1>Settings:</h1>
+                <button>DarkMode:</button>
+                <a href="" class="box-close">x</a>
+            </div>
+        </div>
+    </footer>
+</div>
+
+{% endblock %}

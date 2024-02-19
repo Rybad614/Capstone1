@@ -1,0 +1,89 @@
+*:focus {
+    outline: none;
+}
+
+header {
+    background: rgba(243, 243, 243, 0.69);
+    border-bottom: solid 1px;
+    border-color: rgba(199, 199, 199, 0.69);
+}
+
+a {
+   text-decoration: none;
+   color: black;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#base-logo {
+    margin: 0;
+    padding-top: 5px;
+    text-align: center;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+ul li {
+    display: inline-block;
+    padding-left: 20px;
+    padding-bottom: 5px;
+}
+
+.search-bar {
+    text-align: center;
+    margin: 25px;
+    padding: 10px 150px;
+    background-color: transparent;
+    border: solid 1px rgba(199, 199, 199, 0.69);
+    border-radius: 20px;
+    font-size: large;
+}
+
+.search-bar:focus {
+    font-size: large;
+    background-color: white;
+    box-shadow: 0 0 5px 0 rgb(93, 93, 93);
+}
+
+.search-bar:hover {
+    border: solid 1px transparent;
+    background-color: white;
+    box-shadow: 0 0 5px 0 rgb(93, 93, 93);
+}
+
+.search-bar:hover::placeholder {
+    color: transparent;
+    transition: 0.2s ease;
+}
+
+.select-handle {
+    margin-right: 80px;
+    margin-bottom: 20px;
+    margin-left: 80px;
+    padding: 10px;
+    appearance: none;
+    border: solid 1px transparent;
+    background-color: rgba(244, 244, 244, 0.69);
+}
+
+.select-handle:hover {
+    border: solid 1px rgba(199, 199, 199, 0.69);
+    box-shadow:  0 0 7px 0 rgba(199, 199, 199, 0.69);
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 30px;
+}
+
+button:hover {
+    box-shadow: 0 0 7px 0 rgb(93, 93, 93);
+    cursor: pointer;
+}

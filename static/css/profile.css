@@ -1,0 +1,31 @@
+#edit-link {
+    margin: 0;
+    display: inline-block;
+    text-align: center;
+    border: solid 2px;
+    background-color: transparent;
+    padding: 10px 255px;
+    border-radius: 30px;
+}
+
+#edit-link:hover {
+    border: solid 2px transparent;
+    background-color: white;
+    box-shadow: 0 0 5px 0 rgb(93, 93, 93);
+    transition: ease 1s;
+}
+
+.container {
+    width: 100%;
+    text-align: center;
+}
+
+#search-history {
+    padding: 10px;
+    display: inline-block;
+}
+
+#suggestions {
+    padding: 10px;
+    float: right;
+}

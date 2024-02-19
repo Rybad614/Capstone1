@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<div id="page-container">
+    <div id="content-wrap">
+
+        <form name="send-form" class="send-form" action="/result" method="GET">
+            <fieldset>
+                <h1>Is this what you're looking for?</h1>
+
+                <div id="song-result">
+                    <img src="{{ results['art'] }}" width="100%" height="350px">
+                    <p><h1>""</h1> {{ results['snippet']}}... </p>
+                    <h2> {{ results['title'] }} </h2>
+                    <b> {{ results['published in'] }} </b>
+                </div>
+
+                <div>
+                    <input type="radio" id="yes" name="answer" value="yes">
+                    <label for="yes">Yes</label>
+                </div>
+                
+                <div>
+                    <input type="radio" id="no" name="answer" value="no">
+                    <label for="no">No</label>
+                </div>
+                <button type="submit">Confirm</button>
+            </fieldset>
+        </form>
+
+        <div>
+            {% if session['username'] %}
+            <form action="/result" method="POST">
+            {% else %}
+            <form action="/register" method="GET">
+            {% endif %}
+                {{ form.lyrics(class="search-bar", placeholder="Search lyrics") }}
+                {{ form.genre(class="select-handle") }}
+                {{ form.year(class="select-handle") }}
+                <button type="submit">FIND</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

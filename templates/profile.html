@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}{{user.username}}{% endblock %}
+
+{% block content %}
+<h1>Welcome, {{ user.username }}</h1>
+<div class="container">
+    <a href="/user/{{ user.username }}/edit" id="edit-link">Edit</a>
+</div>
+<div>
+    <img src="{{ user.image }}" width="100px" height="100px">
+</div>
+<div>
+    {% if user.bio %}
+    <label for="bio">Bio:</label><br>
+    <p id="bio">{{ user.bio }}</p>
+    {% endif %}
+</div>
+    
+<h2 class="form-inf">Find That Tune:</h2>
+
+<div class="search-container">
+    <form action="/result" method="POST">
+        {{ form.lyrics(class="search-bar", placeholder="Search lyrics") }}
+        <br>
+        {{ form.genre(class="select-handle") }}
+        {{ form.year(class="select-handle") }}
+        <br>
+        <button type="submit">FIND</button>
+    </form>
+</div>
+
+<div id="search-history">
+    <h3>Recently searched:</h3>
+    <div class="chart-li" id="hist-dv">
+        <ul id="history">
+            {% for res in recent %}
+                <li>{{ res.song_info }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+<div id="suggestions">
+    <h3>Suggested:</h3>
+    <div class="chart-li" id="sug-dv">
+        <ul id="suggest">
+            {% for res in recent %}
+                <li>{{ res.suggestion }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}
