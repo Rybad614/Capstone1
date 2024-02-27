@@ -30,25 +30,27 @@
     </form>
 </div>
 
-<div id="search-history">
-    <h3>Recently searched:</h3>
-    <div class="chart-li" id="hist-dv">
-        <ul id="history">
-            {% for res in recent %}
-                <li>{{ res.song_info }}</li>
-            {% endfor %}
-        </ul>
+<div>
+    <div class="li-div" id="search-history">
+        <h3>Recently searched:</h3>
+        <div class="chart-li" id="hist-dv">
+            <ul id="history">
+                {% for res in recent %}
+                <li class="res-song"><a href="">{{ res.song_info }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
-</div>
-
-<div id="suggestions">
-    <h3>Suggested:</h3>
-    <div class="chart-li" id="sug-dv">
-        <ul id="suggest">
-            {% for res in recent %}
-                <li>{{ res.suggestion }}</li>
-            {% endfor %}
-        </ul>
+    
+    <div class="li-div" id="suggestions">
+        <h3>Suggested:</h3>
+        <div class="chart-li" id="sug-dv">
+            <ul id="suggest">
+                {% for res in recent %}
+                <li class="res-song"><a href="">{{ res.suggestion }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
 </div>
 {% endblock %}

@@ -14,6 +14,13 @@ class SignInForm(FlaskForm):
     password = PasswordField("Password", validators=[InputRequired()])
 
 
+class ContactForm(FlaskForm):
+    username = StringField("Username", validators=[Optional()])
+    email = StringField("Email", validators=[InputRequired()])
+    feedback = SelectField("Feedback", choices=[("issue", "I'm Having Trouble"), ("introduction", "I'd Like To Chat With You"), ("hey", "Just Wanted To Reach Out")], validators=[InputRequired()])
+    content = TextAreaField("Content", validators=[InputRequired()])
+
+
 class EditForm(FlaskForm):
     """Form for editing a user."""
 

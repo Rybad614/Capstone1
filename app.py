@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template, redirect, session, url_for
 from models import connect_db, db, User, History
-from forms import SignInForm, SignUpForm, EditForm, DeleteForm, SearchForm
+from forms import SignInForm, SignUpForm, EditForm, ContactForm, SearchForm, DeleteForm
 from secret import GENIUS, SECRET_KEY
 import requests
 
@@ -123,14 +123,23 @@ def login_user():
     return render_template("login.html", form=form)
 
 
-@app.route("/contact")
+@app.route("/contact", methods=['GET', 'POST'])
 def contact():
     """Contact form for the user to get in touch 
     with me (site editor) via email.
 
     """
 
-    return render_template("contact.html")
+    form = ContactForm()
+    if form.validate_on_submit():
+        username = form.username.data
+        email = form.email.data
+        feedback = form.feedback.data
+        content = form.content.data
+        
+        return redirect("/")
+
+    return render_template("contact.html", form=form)
 
 
 @app.route("/user/<username>")

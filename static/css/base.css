@@ -87,3 +87,14 @@ button:hover {
     box-shadow: 0 0 7px 0 rgb(93, 93, 93);
     cursor: pointer;
 }
+
+.res-song {
+    padding: 10px;
+    font-size: small;
+    border-bottom: solid 1px;
+    background-color: rgba(244, 244, 244, 0.69);
+}
+
+.res-song:hover {
+    background-color: rgba(199, 199, 199, 0.69);
+}
